@@ -53,12 +53,38 @@ var typed = new Typed(".auto-typing", {
 document.addEventListener('DOMContentLoaded', function () {
     let menu = document.querySelector('#menu-icon');
     let navbar = document.querySelector('.nav-links');
+    let navlinks = document.querySelectorAll('.nav-links');
     
     if (menu && navbar) {
+
+        // Toggle menu on icon click
         menu.onclick = () => {
             menu.classList.toggle('rotate');
             navbar.classList.toggle('open');
         };
+
+        // Close menu when clicking outside of it
+        document.addEventListener('click',function (event){
+            if (!navbar.contains(event.target) && !menu.contains(event.target)) {
+                navbar.classList.remove('open');
+                menu.classList.remove('rotate');
+                menu.innerHTML = 'open';
+            }
+        });
+
+        // Function to close the menu
+        function closeMenu() {
+            navbar.classList.remove('open');
+            menu.classList.remove('rotate');
+            menu.innerHTML = 'open';
+        }
+
+        // Close menu when clicking on a menu item
+        navlinks.forEach(link => {
+            link.addEventListener('click',function(){
+                closeMenu();
+            })
+        })
     } else {
         console.warn("Menu icon or navbar not found. Skipping menu initialization.");
     }
