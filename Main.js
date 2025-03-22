@@ -50,13 +50,13 @@ var typed = new Typed(".auto-typing", {
 
 })
 // Nav Response
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.nav-links');
+// let menu = document.querySelector('#menu-icon');
+// let navbar = document.querySelector('.nav-links');
 
-menu.onclick = () => {
-    menu.classList.toggle('rotate');
-    navbar.classList.toggle('open');
-}
+// menu.onclick = () => {
+//     menu.classList.toggle('rotate');
+//     navbar.classList.toggle('open');
+// }
 
 // Contact Form Submit
 $("#submit-form").submit((e) => {
