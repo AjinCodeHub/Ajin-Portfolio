@@ -50,13 +50,19 @@ var typed = new Typed(".auto-typing", {
 
 })
 // Nav Response
-// let menu = document.querySelector('#menu-icon');
-// let navbar = document.querySelector('.nav-links');
-
-// menu.onclick = () => {
-//     menu.classList.toggle('rotate');
-//     navbar.classList.toggle('open');
-// }
+document.addEventListener('DOMContentLoaded', function () {
+    let menu = document.querySelector('#menu-icon');
+    let navbar = document.querySelector('.nav-links');
+    
+    if (menu && navbar) {
+        menu.onclick = () => {
+            menu.classList.toggle('rotate');
+            navbar.classList.toggle('open');
+        };
+    } else {
+        console.warn("Menu icon or navbar not found. Skipping menu initialization.");
+    }
+});
 
 // Contact Form Submit
 $("#submit-form").submit((e) => {
@@ -65,7 +71,7 @@ $("#submit-form").submit((e) => {
     const submitBtn = $('#submit-btn');
     const formStatus = $('#form-status');
 
-    submitBtn.text('Sending...').attr('disabled',true);
+    submitBtn.text('Sending...').attr('disabled', true);
 
     $.ajax({
         url: "https://script.google.com/macros/s/AKfycbxTdA4sjJ3rEYeawlYzn8lXApx4rK_My2DzX2XpBSd5CzcYkGMPBWPeGvh6Q8yYGbnTcg/exec",
@@ -77,8 +83,8 @@ $("#submit-form").submit((e) => {
         error: function (err) {
             formStatus.text('❌ Somethings went wrong. Please try again.')
         },
-        complete:function () {
-            submitBtn.text('Send Message').attr('disabled',false)
+        complete: function () {
+            submitBtn.text('Send Message').attr('disabled', false)
         }
     });
 });
