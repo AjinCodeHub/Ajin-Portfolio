@@ -565,10 +565,6 @@ header p {
 .project-details {
     flex: 1;
     padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    display: inline-block;
 }
 
 .project-details h2 {
@@ -582,8 +578,6 @@ header p {
     color: #596263;
     font-size: 18px;
     text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
     font-weight: 500;
 }
 
