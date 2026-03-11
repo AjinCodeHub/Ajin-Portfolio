@@ -116,3 +116,37 @@ $("#submit-form").submit((e) => {
     });
 });
 
+// View More Projects
+// View More / View Less Projects
+
+const viewMoreBtn = document.getElementById("viewMoreBtn");
+const hiddenProjects = document.querySelectorAll(".hidden-project");
+
+let expanded = false;
+
+if (viewMoreBtn) {
+
+    viewMoreBtn.addEventListener("click", () => {
+
+        if (!expanded) {
+
+            hiddenProjects.forEach(project => {
+                project.style.display = "flex";
+            });
+
+            viewMoreBtn.textContent = "View Less Projects";
+            expanded = true;
+
+        } else {
+
+            hiddenProjects.forEach(project => {
+                project.style.display = "none";
+            });
+
+            viewMoreBtn.textContent = "View More Projects";
+            expanded = false;
+        }
+
+    });
+
+}
