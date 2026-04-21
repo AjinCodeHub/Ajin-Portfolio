@@ -43,7 +43,7 @@ setTimeout(typeWriter, 500);
 
 // Auto Typing
 var typed = new Typed(".auto-typing", {
-    strings: ["PYTHON DEVELOPER", "FULL STACT DEVELOPER", "BACKEND DEVELOPER", "FRONTEND DEVELOPER"],
+    strings: ["PYTHON DEVELOPER", "FULL STACK DEVELOPER", "BACKEND DEVELOPER", "FRONTEND DEVELOPER"],
     typeSpeed: 150,
     backSpeed: 150,
     loop: true,
